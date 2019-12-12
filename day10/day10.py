@@ -1,7 +1,7 @@
 from sys import path
 from math import hypot, atan2
 
-with open(path[0] + "/input.txt", "r") as f:
+with open(path[0] + "/input.txt") as f:
     asteroidMap = [line.strip() for line in f.readlines()]
 
 asteroids = []
