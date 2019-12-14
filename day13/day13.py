@@ -3,7 +3,7 @@ path.append(path[0] + "/..")
 from intcode import IntCode
 
 def display(output):
-    sprites = {
+    tiles = {
         0: ' ',
         1: '\u2588',
         2: '#',
@@ -16,10 +16,7 @@ def display(output):
     canvas = ''
     for y in range(maxY + 1):
         for x in range(maxX + 1):
-            if (x, y) in screen:
-                canvas += sprites[screen[(x, y)]]
-            else:
-                canvas += ' '
+            canvas += tiles[screen.get((x, y), 0)]
         canvas += '\n'
     print(canvas[:-1])
     return screen

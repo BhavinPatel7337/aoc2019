@@ -39,6 +39,10 @@ class Painter:
         self.painted[(self.x, self.y)] = colour
 
     def canvas(self):
+        tiles = {
+            0: ' ',
+            1: '\u2588'
+        }
         minX = min(k[0] for k in self.painted.keys())
         maxX = max(k[0] for k in self.painted.keys())
         minY = min(k[1] for k in self.painted.keys())
@@ -46,10 +50,7 @@ class Painter:
         canvas = ''
         for y in range(minY, maxY + 1):
             for x in range(minX, maxX + 1):
-                if (x, y) in self.painted and self.painted[(x,y)] == 1:
-                    canvas += '\u2588'
-                else:
-                    canvas += ' '
+                canvas += tiles[self.painted.get((x,y), 0)]
             canvas += '\n'
         return canvas[:-1]
 
