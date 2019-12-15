@@ -18,9 +18,9 @@ class IntCode:
         
         def store(offset, value):
             if self.memory[self.pc] // 10 ** (offset + 1) % 10 == 2:
-                self.memory[self.memory[self.pc + offset] + self.bp] = value
+                self.memory[self.memory[self.pc + offset] + self.bp] = int(value)
             else:
-                self.memory[self.memory[self.pc + offset]] = value
+                self.memory[self.memory[self.pc + offset]] = int(value)
 
         self.inputs += [*args]
         
