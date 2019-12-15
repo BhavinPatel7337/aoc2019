@@ -1,3 +1,4 @@
+from os import system
 from sys import path
 path.append(path[0] + "/..")
 from intcode import IntCode
@@ -13,6 +14,7 @@ def display(output):
     screen = {(output[i], output[i + 1]): output[i + 2] for i in range(0, len(output), 3)}
     maxX = max(k[0] for k in screen.keys())
     maxY = max(k[1] for k in screen.keys())
+    system('cls || clear')
     canvas = ''
     for y in range(maxY + 1):
         for x in range(maxX + 1):
