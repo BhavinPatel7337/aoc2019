@@ -1,4 +1,4 @@
-from os import system
+import os
 from sys import path
 path.append(path[0] + "/..")
 from intcode import IntCode
@@ -63,7 +63,7 @@ def display(areaMap):
     maxX = max(k[0] for k in areaMap.keys())
     minY = min(k[1] for k in areaMap.keys())
     maxY = max(k[1] for k in areaMap.keys())
-    system('cls || clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
     canvas = ''
     for y in range(minY, maxY + 1):
         for x in range(minX, maxX + 1):
