@@ -1,6 +1,6 @@
 class IntCode:
     def __init__(self, program, *args):
-        self.memory = program.copy() + [0] * (4096 - len(program))
+        self.memory = program.copy() + [0] * (8192 - len(program))
         self.inputs = [*args]
         self.pc = 0
         self.bp = 0
